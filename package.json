@@ -11,13 +11,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "react-media": "^1.10.0",
-=======
->>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
-=======
->>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

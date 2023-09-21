@@ -10,12 +10,12 @@ const DndPic = ({ id, url }) => {
         }),
     }));
 
-    const myImageStyle = { width: '200px', height: '150px', objectFit: 'cover', borderRadius:'6px', opacity: isDragging ? 0.5: 1};
+    const myImageStyle = { width:'100%', objectFit: 'cover', borderRadius:'6px', opacity: isDragging ? 0.5: 1};
 
     return ( 
         
-        <img src={url} style={myImageStyle} ref = {drag}/>
-     );
+        <img src={url} ref = {drag} style={myImageStyle} className={'imgmedia'}/>
+    )
 }
  
 export default DndPic;

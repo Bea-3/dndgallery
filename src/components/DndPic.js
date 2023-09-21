@@ -1,19 +1,20 @@
-const DndPic = ({ id, url }) => {
-    // handle drag start
-    const onDragStart = (e) => {
-        e.DragEvent(id)
-        console.log('drag started', id)
-    }
-    // handle drag enter
-    const onDragEnter = (e) => {
-        e.DragEvent(id)
-        console.log('drag started', id)
-    }
+import { useDrag } from "react-dnd";
 
-    const myImageStyle = { width: '200px', height: '150px', objectFit: 'cover', borderRadius:'6px' };
+const DndPic = ({ id, url }) => {
+   
+    const [{ isDragging }, drag] = useDrag( () => ({
+        type: "image",
+        item: {id: id},
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging(),
+        }),
+    }));
+
+    const myImageStyle = { width: '200px', height: '150px', objectFit: 'cover', borderRadius:'6px', opacity: isDragging ? 0.5: 1};
 
     return ( 
-        <img src={url} style={myImageStyle} draggable="true"/>
+        
+        <img src={url} style={myImageStyle} ref = {drag}/>
      );
 }
  

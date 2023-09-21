@@ -137,10 +137,10 @@
   width:45%;
 }
 .user-img{
-  background-color: yellow;
-  width:200px;
-  height:150px;
-
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap:10px;
+  height:50vh;
 }
 .chosen-pic{
   border-radius: 15px;

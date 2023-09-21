@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import DndPic from './DndPic';
+import { useDrop } from 'react-dnd';
 
 const Gallery = () => {
 
@@ -20,6 +22,26 @@ const Gallery = () => {
         }
     ];
 
+    // state for the dropbox. the state representing what is going into the drop box.
+    const [dropbox, setDropbox] = useState([]);
+
+    const [{ isOver }, drop] = useDrop( () => ({
+        // specify the type of object to accept. and pass a fxn when the item is dropped.
+        accept: "image",
+        drop: (item) => addImageToDropbox(item.id),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+        }),
+    }));
+
+    const addImageToDropbox = (id) => {
+        // check if we are actually dragging
+        // console.log(id)
+        const picsList = PictureList.filter((pic) => id === pic.id)
+        setDropbox((dropbox) => [...dropbox, picsList[0]]);
+        // below is used to replace the image dropped.
+        // setDropbox([picsList[0]]);
+    }
 
     return ( 
         <div className="gallery-main">
@@ -35,7 +57,7 @@ const Gallery = () => {
                     </div>
                     <div className="imgs">
                         { PictureList.map((pic) => {
-                           return <DndPic url={pic.url} key={pic.id}/>
+                           return <DndPic url={pic.url} id={pic.id} key={pic.id} alt={pic.alt}/>
                         } )}
                         
                     {/* <img src={require("../images/beach.png")}/> */}
@@ -45,7 +67,11 @@ const Gallery = () => {
                 <div className="drop-box">
                     <p>Your Selections: </p>
                     <div className="chosen-pic">
-                    <div className="user-img"></div>
+                    <div className="user-img" ref={drop}>
+                        {dropbox.map((pic) => {
+                            return <DndPic url={pic.url} id={pic.id} key={pic.id} alt={pic.alt}/>
+                        } )}
+                    </div>
                     </div>
                 </div>
             </div>

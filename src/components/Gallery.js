@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState } from "react";
 import DndPic from "./DndPic";
 import { useDrop } from "react-dnd";
@@ -121,6 +122,8 @@ const Gallery = () => {
 
 export default Gallery;
 =======
+=======
+>>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
 import { useState } from 'react';
 import DndPic from './DndPic';
 import { useDrop } from 'react-dnd';
@@ -202,5 +205,9 @@ const Gallery = () => {
      );
 }
  
+<<<<<<< HEAD
+export default Gallery;
+>>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
+=======
 export default Gallery;
 >>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a

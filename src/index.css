@@ -41,6 +41,9 @@
   display: flex;
   justify-content: space-evenly;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
 }
 .welcome {
   width: 40%;
@@ -126,6 +129,7 @@
   justify-content: space-between;
   
 }
+<<<<<<< HEAD
 
 .all-images{
   min-height: 30vh;
@@ -267,6 +271,8 @@
   justify-content: space-between;
   
 }
+=======
+>>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
 .dnd-img div{
   border:1px solid blue;
 }

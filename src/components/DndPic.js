@@ -10,11 +10,19 @@ const DndPic = ({ id, url }) => {
         }),
     }));
 
+<<<<<<< HEAD
     const myImageStyle = { width:'100%', objectFit: 'cover', borderRadius:'6px', opacity: isDragging ? 0.5: 1};
 
     return ( 
         
         <img src={url} ref = {drag} style={myImageStyle} className={'imgmedia'}/>
+=======
+    const myImageStyle = { width: '200px', height: '150px', objectFit: 'cover', borderRadius:'6px', opacity: isDragging ? 0.5: 1};
+
+    return ( 
+        
+        <img src={url} style={myImageStyle} ref = {drag}/>
+>>>>>>> e784d3f8544f4b5ddfb81fcf7b85affcfb4d003a
      );
 }
  
